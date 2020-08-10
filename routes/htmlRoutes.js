@@ -6,20 +6,20 @@
 //         - exercise.html ( "/exercise" )
 //         - stats.html ( "/stats" )
 
-
-const router = require("express").Router();
 const path = require("path");
+const htmlRouter = require("express").Router();
 
-router.get("/", (req, res) => {
+
+htmlRouter.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
-  router.get("/exercise", (req, res) => {
+  htmlRouter.get("/exercise", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/exercise.html"));
   });
 
-  router.get("/stats", (req, res) => {
+  htmlRouter.get("/stats", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/stats.html"));
   });
 
-  module.exports = router;
+  module.exports = htmlRouter;
